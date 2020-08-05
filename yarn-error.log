@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/mijac/.nvm/versions/node/v12.16.1/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js add vite v1.0.0-rc.3
+  /Users/mijac/.nvm/versions/node/v12.16.1/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js add vite@ v1.0.0-rc.3
 
 PATH: 
   /Users/mijac/.nvm/versions/node/v12.16.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mijac/Wheel/Vite/song-ui/node_modules/.bin:/usr/local/mysql/bin:/Library/apache-maven-3.6.3/bin
@@ -35,11 +35,12 @@ npm manifest:
       "build": "vite build"
     },
     "dependencies": {
-      "vue": "^3.0.0-rc.1"
+      "vue": "^3.0.0-rc.1",
+      "vue-router": "4.0.0-beta.3"
     },
     "devDependencies": {
-      "vite": "^1.0.0-rc.1",
-      "@vue/compiler-sfc": "^3.0.0-rc.1"
+      "@vue/compiler-sfc": "^3.0.0-rc.1",
+      "vite": "^1.0.0-rc.3"
     }
   }
 
@@ -1988,7 +1989,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
     integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
   
-  vite@^1.0.0-rc.1:
+  vite@^1.0.0-rc.3:
     version "1.0.0-rc.4"
     resolved "https://registry.yarnpkg.com/vite/-/vite-1.0.0-rc.4.tgz#210106136861b231704e6381ac9eb1bcd655d4f0"
     integrity sha512-D9gpKKaE2U0YpIxNrSn+nlFPBT0sfg68Y1EReYW8YHMhbNFcxwS7RZIa1W/8Pq6yDfVRAhbOZNijv1mLG5pCEg==
@@ -2043,6 +2044,11 @@ Lockfile:
       slash "^3.0.0"
       vue "^3.0.0-rc.5"
       ws "^7.2.3"
+  
+  vue-router@4.0.0-beta.3:
+    version "4.0.0-beta.3"
+    resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-beta.3.tgz#e46f45807023a4b8ce73a143a216b4c9ea3eb243"
+    integrity sha512-3/cg3n46D9MO9u2nvtGE38gMyUxg8sjt6jMeZ6zbi9sRGAL0PaDHuKS+xWlOOLit7abP5MepNlh84t41gxtP8Q==
   
   vue@^3.0.0-rc.1, vue@^3.0.0-rc.5:
     version "3.0.0-rc.5"

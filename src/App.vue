@@ -1,14 +1,14 @@
 <template>
-  <div>Hi Vue3!</div>
-  <Jambo></Jambo>
+  <div>Hi Vue3! |
+    <router-link to="/">第一个组件</router-link> |
+    <router-link to="/xxx">ts-config</router-link>
+  </div>
+  <br>
+  <router-view></router-view>
 </template>
 
 <script>
-import Jambo from './components/Jambo.vue'
 export default {
   name: 'App',
-  components: {
-    Jambo
-  }
 }
 </script>
