@@ -4,6 +4,7 @@ import './index.scss'
 import { createWebHashHistory, createRouter } from 'vue-router'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
+import './static/font/iconfont.js'
 
 const history = createWebHashHistory()
 const router = createRouter({

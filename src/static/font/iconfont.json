@@ -1,0 +1,16 @@
+{
+  "id": "2002763",
+  "name": "vite",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "278288",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    }
+  ]
+}
