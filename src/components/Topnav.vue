@@ -5,7 +5,7 @@
     </svg>
     <div class="logo">LOGO</div>
     <ul class="menu">
-      <li>菜单一</li>
+      <li><router-link to="/">菜单一</router-link></li>
       <li>菜单二</li>
     </ul>
   </div>
