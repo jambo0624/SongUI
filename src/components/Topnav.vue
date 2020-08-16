@@ -26,7 +26,8 @@
 
 <style lang="scss" scoped>
   .icon {
-    width: 1em; height: 1em;
+    width: 1em;
+    height: 1em;
     vertical-align: -0.15em;
     fill: #000;
     overflow: hidden;
@@ -34,10 +35,14 @@
   .topnav {
     display: flex;
     padding: 16px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 10;
     justify-content: center;
     align-items: center;
+    background: pink;
     > .logo {
       max-width: 6em;
       margin-right: auto;
