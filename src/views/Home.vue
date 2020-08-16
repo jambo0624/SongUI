@@ -1,6 +1,6 @@
 <template>
   <div>
-    <topnav></topnav>
+    <Topnav/>
     <div class="banner">
       <h1>Song UI</h1>
       <h2>基于 Vue3 的 UI 框架，开发时使用了 Vite，这个针对 Vue 单页面组件的无打包开发服务器。</h2>
