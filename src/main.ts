@@ -1,6 +1,7 @@
+import './lib/song.scss'
+import './index.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.scss'
 import './static/font/iconfont.js'
 import { router } from './router'
 

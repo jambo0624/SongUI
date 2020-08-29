@@ -1,5 +1,5 @@
 <template>
-  <button :class="{ checked: value }" @click="toggle"> <span></span> </button>
+  <button class="song-switch" :class="{ 'song-checked': value }" @click="toggle"> <span></span> </button>
 </template>
 
 <script lang="ts">
@@ -20,7 +20,7 @@
 <style lang="scss">
   $h: 22px;
   $h2: $h - 4px;
-  button {
+  .song-switch {
     height: $h;
     width: $h*2;
     border: none;
@@ -37,7 +37,7 @@
       border-radius: $h2/2;
       transition: all .25s;
     }
-    &.checked{
+    &.song-checked{
       background: #1890ff;
       > span {
         left: calc(100% - #{$h2} - 2px);
@@ -49,7 +49,7 @@
     &:active{
       > span {width: $h2 + 4px;}
     }
-    &.checked:active{
+    &.song-checked:active{
       > span{
         width: $h2 + 4px;
         margin-left: -4px;
