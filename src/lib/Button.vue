@@ -1,17 +1,41 @@
 <template>
-  <button class="song-button" :class="{[`song-theme-${theme}`]:theme}">
+  <button class="song-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+  import { computed } from 'vue'
   export default {
     name: "Button",
     props: {
       theme: {
         type: String,
         default: 'button'
+      },
+      size: {
+        type: String,
+        default: 'normal'
+      },
+      level: {
+        type: String,
+        default: 'normal'
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       }
+    },
+    setup(props){
+      const { theme, size, level } = props
+      const classes = computed(()=>{
+        return {
+          [`song-theme-${theme}`]: theme,
+          [`song-size-${size}`]: size,
+          [`song-level-${level}`]: level
+        }
+      })
+      return { classes }
     }
   }
 </script>
@@ -22,6 +46,8 @@
   $color: #333;
   $blue: #40a9ff;
   $radius: 4px;
+  $red: #ed5b56;
+  $grey: grey;
   .song-button {
     box-sizing: border-box;
     height: $h;
@@ -48,6 +74,97 @@
     }
     &::-moz-focus-inner{
       border: 0;
+    }
+    &.song-theme-link {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      color: inherit;
+      &:hover,&:focus {
+        color: lighten($blue, 10%);
+      }
+    }
+    &.song-theme-text {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      color: inherit;
+      &:hover,&:focus {
+        background: darken(white, 5%);
+      }
+    }
+    &.song-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+    &.song-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
+    &.song-theme-button {
+      &.song-level-main {
+        background: $blue;
+        color: #fff;
+        border-color: $blue;
+        &:hover,&:focus{
+          background: darken($blue, 10%);
+          border-color: darken($blue, 10%);
+        }
+      }
+      &.song-level-danger {
+        background: $red;
+        color: #fff;
+        border-color: $red;
+        &:hover,&:focus{
+          background: darken($red, 10%);
+          border-color: darken($red, 10%);
+        }
+      }
+    }
+    &.song-theme-link{
+      &.song-level-main {
+        color: $blue;
+        &:hover,&:focus{
+          color: darken($blue, 10%);
+        }
+      }
+      &.song-level-danger{
+        color: $red;
+        &:hover,&:focus {
+          color: darken($red, 10%);
+        }
+      }
+    }
+    &.song-theme-text{
+      &.song-level-main {
+        color: $blue;
+        &:hover,&:focus{
+          color: darken($blue, 10%);
+        }
+      }
+      &.song-level-danger{
+        color: $red;
+        &:hover,&:focus {
+          color: darken($red, 10%);
+        }
+      }
+    }
+    &.song-theme-button {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
+        &:hover {
+          border-color: $grey;
+        }
+      }
+    }
+    &.song-theme-link, &.song-theme-text {
+      &[disabled] {
+        cursor: not-allowed;
+        color: $grey;
+      }
     }
   }
 </style>
