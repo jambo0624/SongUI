@@ -45,6 +45,11 @@
     <Button disabled theme="link">链接按钮</Button>
     <Button disabled theme="text">文本按钮</Button>
   </div>
+  <h3>示例 5 </h3>
+  <div>
+    <Button loading>加载中</Button>
+    <Button>加载完毕</Button>
+  </div>
 </template>
 
 <script lang="ts">
