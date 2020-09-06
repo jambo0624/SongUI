@@ -1,24 +1,32 @@
 <template>
-  <div class="song-dialog-overlay"></div>
-  <div class="song-dialog-wrapper">
-    <div class="song-dialog">
-      <header>标题 <span class="song-dialog-close"></span></header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字</p>
-      </main>
-      <footer>
-        <Button>OK</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="song-dialog-overlay"></div>
+    <div class="song-dialog-wrapper">
+      <div class="song-dialog">
+        <header>标题 <span class="song-dialog-close"></span></header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字</p>
+        </main>
+        <footer>
+          <Button>OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script lang="ts">
   import Button from './Button.vue'
   export default {
     name: "Dialog",
+    props:{
+      visible:{
+        type: Boolean,
+        default: false
+      }
+    },
     components:{
       Button
     }
