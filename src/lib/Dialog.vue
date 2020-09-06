@@ -1,16 +1,16 @@
 <template>
   <template v-if="visible">
-    <div class="song-dialog-overlay"></div>
+    <div class="song-dialog-overlay" @click="onClickOverlay"></div>
     <div class="song-dialog-wrapper">
       <div class="song-dialog">
-        <header>标题 <span class="song-dialog-close"></span></header>
+        <header>标题 <span @click="close" class="song-dialog-close"></span></header>
         <main>
           <p>第一行字</p>
           <p>第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字</p>
         </main>
         <footer>
-          <Button>OK</Button>
-          <Button>Cancel</Button>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -21,14 +21,44 @@
   import Button from './Button.vue'
   export default {
     name: "Dialog",
+    components:{
+      Button
+    },
     props:{
       visible:{
         type: Boolean,
         default: false
+      },
+      closeOnClickOverlay:{
+        type:Boolean,
+        default: true
+      },
+      ok: {
+        type: Function
+      },
+      cancel: {
+        type: Function
       }
     },
-    components:{
-      Button
+    setup(props,context){
+      const close = () => {
+        context.emit('update:visible',false)
+      }
+      const onClickOverlay = () => {
+        if(props.closeOnClickOverlay){
+          close()
+        }
+      }
+      const ok = () => {
+        if(props.ok?.()!==false){
+        // if(props.ok && props.ok()!==false){
+          close()
+        }
+      }
+      const cancel = () => {
+        close()
+      }
+      return { close, onClickOverlay, ok, cancel }
     }
   }
 </script>
