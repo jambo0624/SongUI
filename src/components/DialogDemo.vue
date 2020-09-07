@@ -1,18 +1,21 @@
 <template>
   <div>
     <h3>dialog 示例</h3>
-    <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="visible"
-            :close-on-click-overlay="true"
-            :ok="fn1"
-            :cancel="fn2">
-      <template v-slot:content>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad harum necessitatibus obcaecati omnis placeat praesentium quos? Aperiam eaque est magnam molestiae veniam? Dolores ex laborum optio quas quibusdam. Nemo, possimus.</p>
-      </template>
-      <template v-slot:title>
-        <strong>标题</strong>
-      </template>
-    </Dialog>
+    <div style="position: relative;z-index: 1;">
+      <Button @click="toggle">toggle</Button>
+      <Dialog v-model:visible="visible"
+              :close-on-click-overlay="true"
+              :ok="fn1"
+              :cancel="fn2">
+        <template v-slot:content>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad harum necessitatibus obcaecati omnis placeat praesentium quos? Aperiam eaque est magnam molestiae veniam? Dolores ex laborum optio quas quibusdam. Nemo, possimus.</p>
+        </template>
+        <template v-slot:title>
+          <strong>标题</strong>
+        </template>
+      </Dialog>
+    </div>
+    <div style="position: relative;top: 20px;z-index: 2;width: 300px;height: 300px;background: lightcoral;"></div>
   </div>
 </template>
 
