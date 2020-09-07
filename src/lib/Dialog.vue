@@ -3,10 +3,9 @@
     <div class="song-dialog-overlay" @click="onClickOverlay"></div>
     <div class="song-dialog-wrapper">
       <div class="song-dialog">
-        <header>标题 <span @click="close" class="song-dialog-close"></span></header>
+        <header><slot name="title"></slot> <span @click="close" class="song-dialog-close"></span></header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字第二行字</p>
+          <slot name="content"></slot>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
