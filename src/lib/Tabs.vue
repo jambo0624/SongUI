@@ -5,7 +5,9 @@
            @click="select(title)"
            :class="{ selected: title === this.selected}"
            v-for="(title, index) in titles"
+           :ref = "el => { if(el) navItems[index] = el}"
            :key="index">{{title}}</div>
+      <div ref="indicator" class="song-tabs-nav-indicator"></div>
     </div>
     <div class="song-tabs-content">
       <component class="song-tabs-content-item"
@@ -17,7 +19,7 @@
 
 <script lang="ts">
   import Tab from './Tab.vue'
-  import { computed } from 'vue';
+  import { computed, ref, onMounted } from 'vue';
   export default {
     name: "songTabs",
     props: {
@@ -26,6 +28,16 @@
       }
     },
     setup(props,context) {
+      const navItems = ref < HTMLDivElement[] > ([])
+      const indicator = ref < HTMLDivElement > (null)
+      onMounted(()=>{
+        const divs = navItems.value
+        const result = divs.filter(div => {
+          return div.classList.contains('selected')
+        })[0]
+        const { width } = result.getBoundingClientRect()
+        indicator.value.style.width = width + 'px'
+      })
       const defaults = context.slots.default()
       defaults.forEach(tag => {
         if(tag.type !== Tab){
@@ -43,7 +55,7 @@
       const select = (title :String )=>{
         context.emit('update:selected',title)
       }
-      return { defaults, titles, current, select }
+      return { defaults, titles, current, select, navItems, indicator }
     }
   }
 </script>
@@ -57,6 +69,7 @@
       display: flex;
       color: $color;
       border-bottom: 1px solid $border-color;
+      position: relative;
 
       &-item {
         padding: 8px 0;
@@ -72,6 +85,13 @@
         }
       }
 
+      &-indicator {
+        position: absolute;
+        height: 3px;
+        background: $blue;
+        left: 0;
+        bottom: -1px;
+      }
     }
 
     &-content {
