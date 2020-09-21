@@ -8,7 +8,7 @@
 <script lang="ts">
   import { computed } from 'vue'
   export default {
-    name: "Button",
+    name: "songButton",
     props: {
       theme: {
         type: String,
