@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: "songTabs"
+    name: "songTab"
   }
 </script>
 
