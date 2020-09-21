@@ -1,11 +1,11 @@
 <template>
   <div class="song-tabs">
-    <div class="song-tabs-nav">
+    <div class="song-tabs-nav" ref="container">
       <div class="song-tabs-nav-item"
            @click="select(title)"
-           :class="{ selected: title === this.selected}"
+           :class="{ selected: title === selected}"
            v-for="(title, index) in titles"
-           :ref = "el => { if(el) navItems[index] = el}"
+           :ref = "el => { if(title === selected) selectedItem = el}"
            :key="index">{{title}}</div>
       <div ref="indicator" class="song-tabs-nav-indicator"></div>
     </div>
@@ -19,7 +19,7 @@
 
 <script lang="ts">
   import Tab from './Tab.vue'
-  import { computed, ref, onMounted } from 'vue';
+  import { computed, ref, onMounted, watchEffect } from 'vue';
   export default {
     name: "songTabs",
     props: {
@@ -28,15 +28,16 @@
       }
     },
     setup(props,context) {
-      const navItems = ref < HTMLDivElement[] > ([])
+      const selectedItem = ref < HTMLDivElement > (null)
       const indicator = ref < HTMLDivElement > (null)
+      const container = ref < HTMLDivElement > (null)
       onMounted(()=>{
-        const divs = navItems.value
-        const result = divs.filter(div => {
-          return div.classList.contains('selected')
-        })[0]
-        const { width } = result.getBoundingClientRect()
-        indicator.value.style.width = width + 'px'
+        watchEffect(()=>{
+          const { width, left } = selectedItem.value.getBoundingClientRect()
+          const { left: parentLeft } = container.value.getBoundingClientRect()
+          indicator.value.style.width = width + 'px'
+          indicator.value.style.left = (left - parentLeft) + 'px'
+        })
       })
       const defaults = context.slots.default()
       defaults.forEach(tag => {
@@ -55,7 +56,15 @@
       const select = (title :String )=>{
         context.emit('update:selected',title)
       }
-      return { defaults, titles, current, select, navItems, indicator }
+      return {
+        defaults,
+        titles,
+        current,
+        select,
+        selectedItem,
+        indicator,
+        container
+      }
     }
   }
 </script>
@@ -87,10 +96,11 @@
 
       &-indicator {
         position: absolute;
-        height: 3px;
+        height: 2px;
         background: $blue;
         left: 0;
         bottom: -1px;
+        transition: all 250ms;
       }
     }
 
