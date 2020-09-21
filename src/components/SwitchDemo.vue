@@ -1,4 +1,6 @@
 <template>
+  <div>dialog 示例</div>
+  <h3>示例 1</h3>
   <div>
     <Switch v-model:value="bool"/>
 <!--    <Switch :value="y" @update:value="y = $event"/>-->
