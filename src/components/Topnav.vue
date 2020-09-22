@@ -3,14 +3,13 @@
     <svg class="icon icon-menu" aria-hidden="true" @click="toggleAside">
       <use xlink:href="#icon-menu"></use>
     </svg>
-    <div class="logo">
+    <router-link to="/" class="logo">
       <svg class="icon icon-song" aria-hidden="true" @click="toggleAside">
         <use xlink:href="#icon-song"></use>
       </svg>
-    </div>
+    </router-link>
     <ul class="menu">
-      <li><router-link to="/">菜单一</router-link></li>
-      <li>菜单二</li>
+      <li><router-link to="/">文档</router-link></li>
     </ul>
   </div>
 </template>
@@ -41,9 +40,16 @@
     align-items: center;
     background: #fff;
     border-bottom: 1px solid #ddd;
+    .icon.icon-menu{
+      width: 16px;
+      height: 16px;
+    }
     > .logo {
       max-width: 6em;
       margin-right: auto;
+      .logo:hover {
+        text-decoration: none;
+      }
       > .icon-song {
         width: 30px;
         height: 30px;
