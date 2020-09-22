@@ -3,7 +3,11 @@
     <svg class="icon icon-menu" aria-hidden="true" @click="toggleAside">
       <use xlink:href="#icon-menu"></use>
     </svg>
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon icon-song" aria-hidden="true" @click="toggleAside">
+        <use xlink:href="#icon-song"></use>
+      </svg>
+    </div>
     <ul class="menu">
       <li><router-link to="/">菜单一</router-link></li>
       <li>菜单二</li>
@@ -25,13 +29,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: #000;
-    overflow: hidden;
-  }
   .topnav {
     display: flex;
     padding: 16px;
@@ -39,13 +36,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 20;
     justify-content: center;
     align-items: center;
-    background: pink;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
     > .logo {
       max-width: 6em;
       margin-right: auto;
+      > .icon-song {
+        width: 30px;
+        height: 30px;
+      }
     }
     > .menu {
       display: flex;

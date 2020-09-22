@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1336019",
+      "name": "easyapi-logo",
+      "font_class": "easy",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "14418929",
+      "name": "song",
+      "font_class": "song",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "15378906",
+      "name": "typescript",
+      "font_class": "ts",
+      "unicode": "ecef",
+      "unicode_decimal": 60655
+    },
+    {
+      "icon_id": "17104345",
+      "name": "vuejs-fill",
+      "font_class": "vue",
+      "unicode": "e7e2",
+      "unicode_decimal": 59362
+    },
+    {
       "icon_id": "278288",
       "name": "menu",
       "font_class": "menu",
