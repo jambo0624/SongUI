@@ -40,16 +40,16 @@
     align-items: center;
     background: #fff;
     border-bottom: 1px solid #ddd;
-    .icon.icon-menu{
+    .icon-menu{
       width: 16px;
       height: 16px;
+    }
+    a.logo:hover {
+      border-bottom: none;
     }
     > .logo {
       max-width: 6em;
       margin-right: auto;
-      .logo:hover {
-        text-decoration: none;
-      }
       > .icon-song {
         width: 30px;
         height: 30px;
