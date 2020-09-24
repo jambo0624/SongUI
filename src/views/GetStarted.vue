@@ -1,5 +1,5 @@
 <template>
-  开始
+  开始使用
 </template>
 
 <script>

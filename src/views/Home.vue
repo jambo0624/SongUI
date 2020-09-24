@@ -5,7 +5,7 @@
       <p class="h1">Song UI</p>
       <p class="description">基于 Vue3 的 UI 框架, 开发时使用了 Vite</p>
       <p class="actions">
-        <a href="https://github.com/jambo0624/ViteUI">GitHub</a>
+        <a href="https://github.com/jambo0624/ViteUI" class="github-link">GitHub</a>
         <router-link to="/doc">Get Start</router-link>
       </p>
     </div>
@@ -121,6 +121,11 @@
   .footer {
     padding: 2.5rem;
     text-align: center;
+  }
+  @media (max-width: 300px){
+    .github-link {
+      display: none !important;
+    }
   }
   @media (min-width: 800px) {
     .banner .description{

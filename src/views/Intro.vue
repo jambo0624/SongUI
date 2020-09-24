@@ -1,5 +1,7 @@
 <template>
-  介绍
+  <div>
+    介绍
+  </div>
 </template>
 
 <script>
