@@ -1,12 +1,14 @@
 <template>
-  <div>
-    介绍
-  </div>
+  <article class="markdown-body" v-html="md"></article>
 </template>
 
 <script>
+  import md from '../markdown/intro.md'
   export default {
-    name: "Intro"
+    name: "Intro",
+    setup(){
+      return { md }
+    }
   }
 </script>
 

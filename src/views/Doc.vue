@@ -91,7 +91,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 70px;
+    padding-top: 77px;
     height: 100%;
     > h2 {
       margin-bottom: 4px;
