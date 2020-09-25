@@ -1,5 +1,5 @@
 <template>
-  <h1>button 组件</h1>
+  <h1>Button 组件</h1>
   <div class="demo">
     <h2>示例: 可设置表现形式</h2>
     <div class="demo-component">

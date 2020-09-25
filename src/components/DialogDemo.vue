@@ -1,64 +1,82 @@
 <template>
-  <div>dialog 示例</div>
-  <h3>示例 1</h3>
-  <div style="position: relative;z-index: 1;">
-    <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="visible"
-            :close-on-click-overlay="true"
-            :ok="fn1"
-            :cancel="fn2">
-      <template v-slot:content>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad harum necessitatibus obcaecati omnis placeat praesentium quos? Aperiam eaque est magnam molestiae veniam? Dolores ex laborum optio quas quibusdam. Nemo, possimus.</p>
-      </template>
-      <template v-slot:title>
-        <strong>标题</strong>
-      </template>
-    </Dialog>
+  <h1>Dialog 组件</h1>
+  <div class="demo">
+    <h2>示例: 通过显式 Dialog 组件形式使用</h2>
+    <div class="demo-component">
+      <component :is="DialogDemo1"/><span>弹窗 OK 按钮回调返回 false，所以点击后不关闭窗体</span>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{DialogDemo1.__sourceCode}}</pre>
+    </div>
   </div>
-  <div style="position: relative;top: 20px;margin-bottom: 40px;z-index: 2;width: 300px;height: 300px;background: lightcoral;"></div>
-  <h3>示例 2</h3>
-  <Button @click="showDialog">Show Dialog</Button>
+  <div class="demo">
+    <h2>示例: 通过传参调用 openDialog 事件形式使用</h2>
+    <div class="demo-component">
+      <component :is="DialogDemo2"/><span>closeOnClickOverlay 为 false，所以点击窗体外遮罩部分，窗体不关闭</span>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{DialogDemo2.__sourceCode}}</pre>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-  import Dialog from "../lib/Dialog.vue";
   import Button from "../lib/Button.vue";
-  import { ref } from 'vue'
-  import { openDialog } from "../lib/openDialog";
+  import DialogDemo1 from './Dialog1.demo.vue';
+  import DialogDemo2 from './Dialog2.demo.vue';
   export default {
     name: 'DialogDemo',
     components: {
-      Dialog,
       Button
     },
     setup: function () {
-      const visible = ref(false)
-      const toggle = () => {
-        visible.value = !visible.value
+      return {
+        DialogDemo1,
+        DialogDemo2
       }
-      const fn1 = () => {
-        return false
-      }
-      const fn2 = () => {
-      }
-      const showDialog = () => {
-        openDialog({
-          title: '标题',
-          content: '内容',
-          ok:()=>{
-            console.log('ok')
-          },
-          cancel: ()=>{
-            console.log('cancel')
-          },
-          closeOnClickOverlay: false
-        })
-      }
-      return {visible, toggle, fn1, fn2, showDialog}
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  $border-color: #d9d9d9;
+  .demo{
+    border: 1px solid $border-color;
+    margin: 16px 0 32px;
+    span {
+      padding: 8px 16px;
+      font-size: 14px;
+      vertical-align: middle;
+      color: #aaa;
+    }
+    >h2 {
+      font-size: 20px;
+      padding: 8px 16px;
+      border-bottom: 1px solid $border-color;
+    }
 
+    &-component {
+      padding: 16px;
+    }
+
+    &-actions {
+      padding: 8px 16px;
+      border: 1px dashed $border-color;
+    }
+    &-code {
+      padding: 8px 16px;
+      border-top: 1px dashed $border-color;
+      > pre {
+        line-height: 1.1;
+        font-family: Consolas, 'Courier New', Courier, monospace;
+        margin: 0;
+      }
+    }
+  }
 </style>
