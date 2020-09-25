@@ -62,6 +62,7 @@
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+    vertical-align: middle;
     background: #fff;
     color: $color;
     border: 1px solid $border-color;
