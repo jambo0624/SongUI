@@ -64,11 +64,11 @@
 
 <script lang="ts">
   import Button from '../lib/Button.vue'
-  import ButtonDemo1 from "./ButtonDemo1.vue"
-  import ButtonDemo2 from "./ButtonDemo2.vue"
-  import ButtonDemo3 from "./ButtonDemo3.vue"
-  import ButtonDemo4 from "./ButtonDemo4.vue"
-  import ButtonDemo5 from "./ButtonDemo5.vue"
+  import ButtonDemo1 from "./Button1.demo.vue"
+  import ButtonDemo2 from "./Button2.demo.vue"
+  import ButtonDemo3 from "./Button3.demo.vue"
+  import ButtonDemo4 from "./Button4.demo.vue"
+  import ButtonDemo5 from "./Button5.demo.vue"
   export default {
     name: 'ButtonDemo',
     components: {Button},

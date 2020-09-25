@@ -31,8 +31,8 @@
 
 <script lang="ts">
   import Button from "../lib/Button.vue"
-  import SwitchDemo1 from "./SwitchDemo1.vue"
-  import SwitchDemo2 from "./SwitchDemo2.vue"
+  import SwitchDemo1 from "./Switch1.demo.vue"
+  import SwitchDemo2 from "./Switch2.demo.vue"
   import { ref } from 'vue'
   export default {
     name: 'SwitchDemo',
