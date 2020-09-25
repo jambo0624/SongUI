@@ -9,7 +9,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{DialogDemo1.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(DialogDemo1.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
   <div class="demo">
@@ -21,7 +21,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{DialogDemo2.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(DialogDemo2.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
 </template>
@@ -36,9 +36,11 @@
       Button
     },
     setup: function () {
+      const Prism = (window as any).Prism
       return {
         DialogDemo1,
-        DialogDemo2
+        DialogDemo2,
+        Prism
       }
     }
   }

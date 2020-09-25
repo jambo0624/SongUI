@@ -9,7 +9,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{ButtonDemo1.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(ButtonDemo1.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
   <div class="demo">
@@ -21,7 +21,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{ButtonDemo2.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(ButtonDemo2.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
   <div class="demo">
@@ -33,7 +33,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{ButtonDemo3.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(ButtonDemo3.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
   <div class="demo">
@@ -45,7 +45,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{ButtonDemo4.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(ButtonDemo4.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
   <div class="demo">
@@ -57,7 +57,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{ButtonDemo5.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(ButtonDemo5.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
 </template>
@@ -73,12 +73,14 @@
     name: 'ButtonDemo',
     components: {Button},
     setup(){
+      const Prism = (window as any).Prism
       return {
         ButtonDemo1,
         ButtonDemo2,
         ButtonDemo3,
         ButtonDemo4,
         ButtonDemo5,
+        Prism,
       }
     }
   }

@@ -9,7 +9,7 @@
       <Button theme="text">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>{{TabsDemo1.__sourceCode}}</pre>
+      <pre class="language-html" v-html="Prism.highlight(TabsDemo1.__sourceCode, Prism.languages.html, 'html')"></pre>
     </div>
   </div>
 </template>
@@ -23,7 +23,8 @@
       Button
     },
     setup(){
-      return { TabsDemo1 }
+      const Prism = (window as any).Prism
+      return { TabsDemo1, Prism }
     }
   }
 </script>
