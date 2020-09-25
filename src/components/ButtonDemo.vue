@@ -1,71 +1,117 @@
 <template>
-  <div>button 示例</div>
-  <h3>示例 1 </h3>
-  <div>
-    <Button>你好</Button>
-    <Button theme="button">按钮</Button>
-    <Button theme="link">链接按钮</Button>
-    <Button theme="text">文本按钮</Button>
+  <h1>button 组件</h1>
+  <div class="demo">
+    <h2>示例: 可设置表现形式</h2>
+    <div class="demo-component">
+      <component :is="ButtonDemo1"/>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{ButtonDemo1.__sourceCode}}</pre>
+    </div>
   </div>
-  <h3>示例 2 </h3>
-  <div>
-    <Button size="big">大按钮</Button>
-    <Button>按钮</Button>
-    <Button size="small">小按钮</Button>
+  <div class="demo">
+    <h2>示例: 可设置大小</h2>
+    <div class="demo-component">
+      <component :is="ButtonDemo2"/>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{ButtonDemo2.__sourceCode}}</pre>
+    </div>
   </div>
-  <div>
-    <Button theme="link" size="big">大链接按钮</Button>
-    <Button theme="link">链接按钮</Button>
-    <Button theme="link" size="small">小链接按钮</Button>
+  <div class="demo">
+    <h2>示例: 可设置级别</h2>
+    <div class="demo-component">
+      <component :is="ButtonDemo3"/>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{ButtonDemo3.__sourceCode}}</pre>
+    </div>
   </div>
-  <div>
-    <Button theme="text" size="big">大文本按钮</Button>
-    <Button theme="text">文本按钮</Button>
-    <Button theme="text" size="small">小文本按钮</Button>
+  <div class="demo">
+    <h2>示例: 可设置 disabled</h2>
+    <div class="demo-component">
+      <component :is="ButtonDemo4"/>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{ButtonDemo4.__sourceCode}}</pre>
+    </div>
   </div>
-  <h3>示例 3 </h3>
-  <div>
-    <Button level="main">主要按钮</Button>
-    <Button>普通按钮</Button>
-    <Button level="danger">危险按钮</Button>
-  </div>
-  <div>
-    <Button theme="link" level="main">主要按钮</Button>
-    <Button theme="link">普通链接按钮</Button>
-    <Button theme="link" level="danger">危险链接按钮</Button>
-  </div>
-  <div>
-    <Button theme="text" level="main">主要按钮</Button>
-    <Button theme="text">普通文本按钮</Button>
-    <Button theme="text" level="danger">危险文本按钮</Button>
-  </div>
-  <h3>示例 4 </h3>
-  <div>
-    <Button disabled>普通按钮</Button>
-    <Button disabled theme="link">链接按钮</Button>
-    <Button disabled theme="text">文本按钮</Button>
-  </div>
-  <h3>示例 5 </h3>
-  <div>
-    <Button loading>加载中</Button>
-    <Button>加载完毕</Button>
+  <div class="demo">
+    <h2>示例: 可设置 loading</h2>
+    <div class="demo-component">
+      <component :is="ButtonDemo5"/>
+    </div>
+    <div class="demo-actions">
+      <Button theme="text">查看代码</Button>
+    </div>
+    <div class="demo-code">
+      <pre>{{ButtonDemo5.__sourceCode}}</pre>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
   import Button from '../lib/Button.vue'
+  import ButtonDemo1 from "./ButtonDemo1.vue"
+  import ButtonDemo2 from "./ButtonDemo2.vue"
+  import ButtonDemo3 from "./ButtonDemo3.vue"
+  import ButtonDemo4 from "./ButtonDemo4.vue"
+  import ButtonDemo5 from "./ButtonDemo5.vue"
   export default {
     name: 'ButtonDemo',
     components: {Button},
     setup(){
-      const onClick = () => {
-        console.log('hi')
+      return {
+        ButtonDemo1,
+        ButtonDemo2,
+        ButtonDemo3,
+        ButtonDemo4,
+        ButtonDemo5,
       }
-      return { onClick }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  $border-color: #d9d9d9;
+  .demo{
+    border: 1px solid $border-color;
+    margin: 16px 0 32px;
 
+    >h2 {
+      font-size: 20px;
+      padding: 8px 16px;
+      border-bottom: 1px solid $border-color;
+    }
+
+    &-component {
+      padding: 16px;
+    }
+
+    &-actions {
+      padding: 8px 16px;
+      border: 1px dashed $border-color;
+    }
+    &-code {
+      padding: 8px 16px;
+      border-top: 1px dashed $border-color;
+      > pre {
+        line-height: 1.1;
+        font-family: Consolas, 'Courier New', Courier, monospace;
+        margin: 0;
+      }
+    }
+  }
 </style>
