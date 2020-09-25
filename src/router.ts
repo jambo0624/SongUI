@@ -9,7 +9,7 @@ import Markdown from "./components/Markdown.vue"
 import { h } from 'vue'
 
 const history = createWebHashHistory()
-const x = (filename) => {
+const md = (filename) => {
   return h(Markdown,{
     path: `../markdown/${filename}.md`, key: filename
   })
@@ -20,9 +20,9 @@ export const router = createRouter({
     {path: '/',component: Home},
     {path: '/doc',component: Doc, children: [
         {path: '', redirect: '/doc/intro'},
-        {path: 'intro', component: x('intro')},
-        {path: 'install', component: x('install')},
-        {path: 'get-started', component: x('get-started')},
+        {path: 'intro', component: md('intro')},
+        {path: 'install', component: md('install')},
+        {path: 'get-started', component: md('get-started')},
         {path: 'switch', component: SwitchDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},

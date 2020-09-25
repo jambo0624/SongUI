@@ -1,16 +1,22 @@
 <template>
-  <button class="song-switch" :class="{ 'song-checked': value }" @click="toggle"> <span></span> </button>
+  <button class="song-switch"
+          :disabled="disabled"
+          :class="{ 'song-checked': value }"
+          @click="toggle"> <span></span> </button>
 </template>
 
 <script lang="ts">
   export default {
     name: 'songSwitch',
     props: {
-      value: Boolean
+      value: Boolean,
+      disabled: Boolean
     },
     setup(props, context){
       const toggle = () => {
-        context.emit('update:value',!props.value)
+        if(!props.disabled){
+          context.emit('update:value',!props.value)
+        }
       }
       return { toggle }
     }
@@ -27,6 +33,10 @@
     background: #bfbfbf;
     border-radius: $h/2;
     position: relative;
+    cursor: pointer;
+    &:disabled{
+      cursor: not-allowed;
+    }
     span {
       position: absolute;
       top: 2px;
