@@ -9,4 +9,4 @@
 `npm install song-ui`
    
 
-下一节: [开始使用](#/dov/get-started)
+下一节: [开始使用](#/doc/get-started)

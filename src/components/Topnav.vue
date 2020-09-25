@@ -8,9 +8,6 @@
         <use xlink:href="#icon-song"></use>
       </svg>
     </router-link>
-    <ul class="menu">
-      <li><router-link to="/">文档</router-link></li>
-    </ul>
   </div>
 </template>
 
