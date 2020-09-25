@@ -4,6 +4,9 @@ import fs from 'fs'
 import { baseParse } from '@vue/compiler-core'
 
 export default {
+  base: './',
+  outDir: 'docs',
+  assetsDir: 'assets',
   plugins: [md()],
   vueCustomBlockTransforms: {
     demo: (options) => {
