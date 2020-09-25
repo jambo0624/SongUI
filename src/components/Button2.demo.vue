@@ -1,5 +1,5 @@
 <demo>
-  可设置大小
+  示例：可设置大小
 </demo>
 <template>
   <div>

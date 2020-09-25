@@ -1,5 +1,5 @@
 <demo>
-  通过显式 Dialog 组件形式使用
+  示例：通过显式 Dialog 组件形式使用
 </demo>
 <template>
   <div style="position: relative;z-index: 1;display:inline-block;">

@@ -1,5 +1,5 @@
 <demo>
-  可设置表现形式
+  示例：可设置表现形式
 </demo>
 <template>
   <Button>普通按钮</Button>

@@ -1,5 +1,5 @@
 <demo>
-  通过传参调用 openDialog 事件形式使用
+  示例：通过传参调用 openDialog 事件形式使用
 </demo>
 <template>
   <Button @click="showDialog">Show Dialog</Button>

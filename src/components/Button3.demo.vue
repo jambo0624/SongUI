@@ -1,5 +1,5 @@
 <demo>
-  可设置级别
+  示例：可设置级别
 </demo>
 <template>
   <div>

@@ -1,5 +1,5 @@
 <demo>
-  可设置 loading
+  示例：可设置 loading
 </demo>
 <template>
   <Button loading>加载中</Button>

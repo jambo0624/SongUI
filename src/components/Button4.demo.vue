@@ -1,5 +1,5 @@
 <demo>
-  可设置 disabled
+  示例：可设置 disabled
 </demo>
 <template>
   <Button disabled>普通按钮</Button>
