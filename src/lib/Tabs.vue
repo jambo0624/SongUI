@@ -37,7 +37,7 @@
           const { left: parentLeft } = container.value.getBoundingClientRect()
           indicator.value.style.width = width + 'px'
           indicator.value.style.left = (left - parentLeft) + 'px'
-        })
+        }, { flush: 'post'})
       })
       const defaults = context.slots.default()
       defaults.forEach(tag => {
