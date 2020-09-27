@@ -5,7 +5,7 @@
 然后引入要使用的组件
 
 ```js
-import { Button, Tabs, Switch, Dialog } from 'song-ui' 
+import { Button, Dialog, Tab, Tabs, Switch, openDialog } from 'song-ui' 
 ```
 
 下面是代码示例:
@@ -22,5 +22,7 @@ import { Button, Tabs, Switch, Dialog } from 'song-ui'
   }
 </script>
 ```
+
+本文档，所有组件示例源代码在实际应用中引入路径均应为 'song-ui'
 
 下一节: [Button 组件](#/doc/button)

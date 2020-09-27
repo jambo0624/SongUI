@@ -6,7 +6,7 @@
    
 或者
    
-`npm install song-ui`
+`yarn add song-ui`
    
 
 下一节: [开始使用](#/doc/get-started)

@@ -6,9 +6,7 @@
 </template>
 
 <script lang="ts">
-  import Dialog from "../lib/Dialog.vue";
-  import Button from "../lib/Button.vue";
-  import { openDialog } from "../lib/openDialog";
+  import { Button, Dialog, openDialog } from '../lib/index'
   export default {
     name: 'DialogDemo2',
     components: {
