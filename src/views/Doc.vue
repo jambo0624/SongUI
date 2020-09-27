@@ -85,7 +85,7 @@
     }
   }
   aside {
-    background: #fff;
+    background: #f2f2f2;
     width: 150px;
     padding: 16px 0;
     position: fixed;
@@ -106,7 +106,7 @@
           padding: 4px 16px;
         }
         .router-link-active {
-          background: #f2f2f2;
+          background: #fff;
         }
       }
     }
