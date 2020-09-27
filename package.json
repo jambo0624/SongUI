@@ -1,7 +1,9 @@
 {
   "name": "song-ui",
-  "version": "0.0.2",
-  "files": ["dist/lib/*"],
+  "version": "0.0.3",
+  "files": [
+    "dist/lib/*"
+  ],
   "main": "dist/lib/song.js",
   "scripts": {
     "dev": "vite",
@@ -12,10 +14,10 @@
   },
   "dependencies": {
     "github-markdown-css": "^4.0.0",
+    "marked": "^1.1.1",
     "prismjs": "^1.21.0",
     "vue": "^3.0.0",
-    "vue-router": "4.0.0-beta.3",
-    "marked": "^1.1.1"
+    "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0",
