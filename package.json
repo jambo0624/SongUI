@@ -1,10 +1,11 @@
 {
   "name": "song-ui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "files": [
     "dist/lib/*"
   ],
   "main": "dist/lib/song.js",
+  "module": "dist/lib/song.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
