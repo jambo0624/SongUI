@@ -41,14 +41,21 @@
 <script lang="ts">
   import Topnav from '../components/Topnav.vue'
   import SwitchDemo from '../components/SwitchDemo.vue'
-  import { inject, Ref } from 'vue'
+  import { inject, Ref, WatchEffect } from 'vue'
   export default {
     components: {
       Topnav,
       SwitchDemo
     },
     setup(){
-      const  asideVisible = inject<Ref<boolean>>('asideVisible')
+      const asideVisible = inject<Ref<boolean>>('asideVisible')
+      window.onresize= ()=>{
+        if(document.body.clientWidth < 500){
+          asideVisible.value = false
+        }else {
+          asideVisible.value = true
+        }
+      }
       return { asideVisible }
     }
   }
@@ -69,6 +76,9 @@
       flex-grow: 1;
       padding-top: 60px;
       padding-left: 306px;
+      @media (max-width:700px) {
+        padding-left: 156px;
+      }
       @media (max-width:500px) {
         padding-left: 0;
       }
@@ -95,6 +105,9 @@
     padding-top: 77px;
     height: 100%;
     z-index: 1;
+    @media (max-width: 700px) {
+      width: 150px;
+    }
     > h2 {
       margin-bottom: 4px;
       margin-top: 10px;
