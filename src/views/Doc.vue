@@ -68,7 +68,7 @@
     > .content {
       flex-grow: 1;
       padding-top: 60px;
-      padding-left: 156px;
+      padding-left: 306px;
       @media (max-width:500px) {
         padding-left: 0;
       }
@@ -85,8 +85,9 @@
     }
   }
   aside {
-    background: #f2f2f2;
-    width: 150px;
+    border-right: 1px solid #f2f2f2;
+    background: #fff;
+    width: 250px;
     padding: 16px 0;
     position: fixed;
     top: 0;
@@ -106,7 +107,7 @@
           padding: 4px 16px;
         }
         .router-link-active {
-          background: #fff;
+          background: #f6f8fa;
         }
       }
     }
