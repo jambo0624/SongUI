@@ -4,7 +4,7 @@
       <use xlink:href="#icon-menu"></use>
     </svg>
     <router-link to="/" class="logo">
-      <svg class="icon icon-song" aria-hidden="true" @click="toggleAside">
+      <svg class="icon icon-song" aria-hidden="true">
         <use xlink:href="#icon-song"></use>
       </svg>
     </router-link>
@@ -20,6 +20,7 @@
     setup(){
       const asideVisible = inject<Ref<boolean>>('asideVisible')
       const toggleAside = () => {
+        console.log('aaa');
         asideVisible.value = !asideVisible.value
       }
       return { toggleAside }
