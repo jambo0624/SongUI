@@ -20,6 +20,7 @@
     setup(){
       const asideVisible = inject<Ref<boolean>>('asideVisible')
       const toggleAside = () => {
+        console.log('toggle')
         asideVisible.value = !asideVisible.value
       }
       return { toggleAside }
